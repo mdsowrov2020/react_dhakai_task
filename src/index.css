@@ -167,6 +167,29 @@ a {
   height: 0px;
   transition: all 0.5s linear;
 }
+
+.pass_validation p {
+  color: #484848;
+  display: block;
+}
+
+.pass_validation p span {
+  display: inline-block;
+  height: 30px;
+  width: 30px;
+  line-height: 30px;
+  border-radius: 50%;
+  text-align: center;
+  -webkit-box-shadow: 0px 0px 6px 2px rgba(199, 199, 199, 0.83);
+  box-shadow: 0px 0px 6px 2px rgba(199, 199, 199, 0.83);
+}
+
+.pass_validation p span:last-child {
+  margin-left: -28px !important;
+}
+.pass_validation p span:first-child {
+  margin-left: 8px !important;
+}
 .pass_validation_add {
   height: auto !important;
   opacity: 1;
@@ -180,9 +203,18 @@ a {
 }
 
 .check_icn {
-  color: green;
+  color: #35ec8b;
   margin-left: 5px;
-  opacity: 0;
+  /* display: none; */
+  /* float: right; */
+}
+
+.times_icn {
+  color: red;
+  margin-left: 5px;
+  display: inline-block;
+  /* display: none; */
+  /* float: right; */
 }
 
 .sbmt_btn {

@@ -11,16 +11,26 @@ const RegisterForm = () => {
     console.log(data);
   };
   // for valid
-  const valid = (item, val_icn) => {
+  const valid = (item, val_icn, inv_icn) => {
     let text = document.querySelector(`#${item}`);
-    text.style.color = 'green';
+    text.style.color = '#35EC8B';
+    let valid_icon = document.querySelector(`#${item} .${val_icn}`);
+    valid_icon.style.opacity = '1';
+
+    let invalid_icon = document.querySelector(`#${item} .${inv_icn}`);
+    invalid_icon.style.opacity = '0';
   };
   // for invalid
-  const invalid = (item, invalid_text) => {
+  const invalid = (item, val_icn, inv_icn) => {
     let text = document.getElementById(`${item}`);
     text.style.color = 'red';
+    let valid_icon = document.querySelector(`#${item} .${val_icn}`);
+    valid_icon.style.opacity = '0';
 
-    document.querySelector(`#${item}`).style.color = 'red';
+    let invalid_icon = document.querySelector(`#${item} .${inv_icn}`);
+    invalid_icon.style.opacity = '1';
+
+    // document.querySelector(`#${item}`).style.color = 'red';
   };
   //for password field
   const handleInputChange = (e) => {
@@ -32,25 +42,25 @@ const RegisterForm = () => {
       pass_val_div.classList.remove('pass_validation_add');
     }
     if (pass_input.match(/[A-Z]/) != null) {
-      valid('capital', 'check_icn');
+      valid('capital', 'check_icn', 'times_icn');
     } else {
-      invalid('capital');
+      invalid('capital', 'check_icn', 'times_icn');
     }
     if (pass_input.match(/[0-9]/) != null) {
-      valid('num');
+      valid('num', 'check_icn', 'times_icn');
     } else {
-      invalid('num');
+      invalid('num', 'check_icn', 'times_icn');
     }
 
     if (pass_input.match(/[!@#$%^&*]/) != null) {
-      valid('char');
+      valid('char', 'check_icn', 'times_icn');
     } else {
-      invalid('char');
+      invalid('char', 'check_icn', 'times_icn');
     }
     if (pass_input.length > 7) {
-      valid('moreEight');
+      valid('moreEight', 'check_icn', 'times_icn');
     } else {
-      invalid('moreEight');
+      invalid('moreEight', 'check_icn', 'times_icn');
     }
   };
 
